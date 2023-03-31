@@ -247,23 +247,18 @@ class CreateMonitoringSubscriptionView(APIView):
         headers = {
             'Content-Type': 'application/json',
         }
-        print("Vapp HOST:", vapp_host)
         response = requests.request('POST', vapp_host, headers=headers, data=payload, verify=False)
-        print("RESPONSE",response)
         message = json.loads(response.text)
-        if  "already exists." in message['App information']['app_address'] :
-            # IsAuthenticated_app = True
-            file_exists = os.path.exists('app_info.json')
-            if file_exists is True:
-                with open('app_info.json', 'r') as openfile:
-                    # Reading from json file
-                    app_object = json.load(openfile)
-                    token_app = app_object['App information']['token']
+        file_exists = os.path.exists('app_info.json')
+        if file_exists is False:
+            outfile = open("app_info.json", "x")
+        if  "app with this app address already exists." in message['App information']['app_address'] :
+            with open('app_info.json', 'r') as openfile:
+                # Reading from json file
+                app_object = json.load(openfile)
+                token_app = app_object['App information']['token']
         elif  app_address in message['App information']['app_address']:
             token_app = message['App information']['token']
-            # IsAuthenticated_netapp = True
-            # IsAuthenticated_already = True
-            outfile = open("app_info.json", "x")
             with open("app_info.json", "w") as outfile:
                 json.dump(message, outfile)
         else:
@@ -313,29 +308,21 @@ class CreateMonitoringSubscriptionView(APIView):
                 "latitude": lat,
                 "longitude": lon
             })
-            file_exists = os.path.exists('app_info.json')
-            if file_exists is True:
-                with open('app_info.json', 'r') as openfile:
-                    # Reading from json file
-                    app_object = json.load(openfile)
-                    token_from_file = app_object['App information']['token']
-                print("FROM FILE", token_from_file)
-                headers = {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Token'+token_from_file,
-                }
-            # else:
-            #     headers = {
-            #         'Content-Type': 'application/json',
-            #         'Authorization': 'Token'+token_app,
-            #     }
-            # Uncomment when testing with VApp
+            with open('app_info.json', 'r') as openfile:
+                # Reading from json file
+                app_object = json.load(openfile)
+                token_from_file = app_object['App information']['token']
+            print("FROM FILE", token_from_file)
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Token'+token_from_file,
+            }
             response = requests.request('POST', vapp_host, headers=headers, data=payload, verify= False)
             message = json.loads(response.text)
             status_code = response.status_code
         else:
             status_code = status.HTTP_201_CREATED
-            message = monitoring_response
+        message = monitoring_response
         return Response(message, status=status_code)
 
 class CellsUpdateView(APIView):
