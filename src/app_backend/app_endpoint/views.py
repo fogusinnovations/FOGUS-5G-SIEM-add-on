@@ -64,7 +64,7 @@ def get_vapp_server_auth() -> str:
 ### For location reporting ###
 def monitor_subscription(times, host, access_token, certificate_folder, capifhost, capifport, callback_server):
     expire_time = (datetime.datetime.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
-    app_id = "myNetapp"
+    app_id = "FogusApp"
     location_subscriber = LocationSubscriber(host, access_token, certificate_folder, capifhost, capifport)
     external_id = "10001@domain.com"
 
@@ -81,7 +81,7 @@ def monitor_subscription(times, host, access_token, certificate_folder, capifhos
 ### For UE reachability ###
 def connection_monitoring_ue_reachability(host, access_token, certificate_folder, capifhost, capifport, callback_server):
     expire_time = (datetime.datetime.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
-    app_id = "myNetapp"
+    app_id = "FogusApp"
     monitoring_subscriber = ConnectionMonitor(host, access_token, certificate_folder, capifhost, capifport)
     external_id = "10001@domain.com"
 
@@ -100,7 +100,7 @@ def connection_monitoring_ue_reachability(host, access_token, certificate_folder
 ### For loss of connectivity ###
 def connection_monitoring_loss_of_conn(host, access_token, certificate_folder, capifhost, capifport, callback_server):
     expire_time = (datetime.datetime.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
-    app_id = "myNetapp"
+    app_id = "FogusApp"
     monitoring_subscriber = ConnectionMonitor(host, access_token, certificate_folder, capifhost, capifport)
     external_id = "10001@domain.com"
     
@@ -119,7 +119,7 @@ def connection_monitoring_loss_of_conn(host, access_token, certificate_folder, c
 ### Dynamic - For UE reachability and loss of connectivity ###
 def connection_monitoring(times, MonitoringType_selected, host, access_token, certificate_folder, capifhost, capifport, callback_server):
     expire_time = (datetime.datetime.today() + datetime.timedelta(days=1)).strftime('%Y-%m-%dT%H:%M:%SZ')
-    app_id = "myNetapp"
+    app_id = "FogusApp"
     monitoring_subscriber = ConnectionMonitor(host, access_token, certificate_folder, capifhost, capifport)
     external_id = "10001@domain.com"
     
@@ -166,13 +166,20 @@ class MonitoringCallbackViewSet(mixins.ListModelMixin,
                 "latitude": lat,
                 "longitude": lon
             })
-            IsAuthenticated_app = CreateMonitoringSubscriptionView.authentication_app()
-            if IsAuthenticated_app is False :
-                IsAuthenticated_app = CreateMonitoringSubscriptionView.authentication_app()
+            token_app = CreateMonitoringSubscriptionView.authentication_app()
+            if token_app == "":
+                token_app = CreateMonitoringSubscriptionView.authentication_app()
+            with open('app_info.json', 'r') as openfile:
+                # Reading from json file
+                app_object = json.load(openfile)
+                token_from_file = app_object['App information']['token']
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Token'+token_from_file,
+            }
             # Uncomment when testing with VApp
             vapp_host = get_vapp_server()
             response = requests.request('POST', vapp_host, headers=headers, data=payload, verify=False)
-            # status_code = response.status_code
         else:
             ipv4Addr = request.data["ipv4Addr"]
             externalId = request.data["externalId"]
@@ -312,7 +319,6 @@ class CreateMonitoringSubscriptionView(APIView):
                 # Reading from json file
                 app_object = json.load(openfile)
                 token_from_file = app_object['App information']['token']
-            print("FROM FILE", token_from_file)
             headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Token'+token_from_file,
