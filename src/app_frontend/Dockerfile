@@ -9,19 +9,15 @@ RUN apt-get update && apt-get install -yq curl && apt-get install -yq gettext-ba
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 
 # install and cache app dependencies
 COPY package.json /usr/src/app/package.json
 RUN npm install
 RUN npm install -g @angular/cli@13.3.4
-# RUN npm install tslib
 
 # add app
 COPY . /usr/src/app
 
 # start app
 CMD ["/bin/sh",  "-c",  "envsubst < src/assets/env.template.js > src/assets/env.js && exec ng serve --host 0.0.0.0 --disable-host-check;"]
-# TLS --ssl true --ssl-key localhost-key.pem --ssl-cert localhost.pem && in package.json =>  --ssl true --ssl-key localhost-key.pem --ssl-cert localhost.pem"
-# CMD ng serve --host 0.0.0.0 --disable-host-check

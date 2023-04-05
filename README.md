@@ -1,69 +1,81 @@
-# FOGUS-Evolved-NetApp
+# FOGUS-5G-SIEM-add-on
 
-## Install NEF Emulator
+## Table of contents
+* [Intorduction](#introduction)
+* [Technologies](#technologies)
+* [Installations](#installations)
+* [Setup](#setup)
+
+## Introduction
+
+## Technologies
+Project is created with:
+* Python version: 3.8.10
+* Node.js version: 16.15.0
+
+## Installations
+
+# Install CAPIF
+
+Follow the instructions at:
+
+# Install NEF Emulator
 
 Follow the instructions at:
 https://github.com/EVOLVED-5G/NEF_emulator
 
-## Install jq (optional)
+# Install jq (optional)
 
 ```bash
 sudo apt install -y jq
 ```
 
-## Configure environmental variables 
+## Setup
+
+# Configure environmental variables 
 Edit [env_to_copy.dev](./env_to_copy.dev)
 
 
-## Deploy Network App 
+# Deploy FOGUS App 
 ```
 
-## Deploy the NetApp
+## Deploy the FOGUS App
 ```bash
-cd FogusNetApp
+cd FOGUS-5G-SIEM-add-on
 
 # Build and deploy containers
-./run.sh
+make (run) 
 
-# Print container logs
-./logs.sh
+# Stop and deploy again the containers
+make restart
+
+# Remove and deploy again the containers
+make fresh
 
 # Stop containers
-./stop.sh
+make stop
 
 # Stop and remove containers
-./cleanup_docker_containers.sh
+make clean
 ```
 
-## Architecture
+# Architecture
 
 | Container             | Folder                | Description                                      |
 |-----------------------|-----------------------|--------------------------------------------------|
-| nefdjango             | evolvedfg             | Backend of NetApp                                |
-| netappfe              | netappfe              | Frontend of NetApp                               |
-| nefpostgres           | -                     | DB to store info exchanged with NEF              |
+| app_backend_django    | app_backend           | Backend of FOGUS App                             |
+| app_frontend_angular  | app_frontend          | Frontend of FOGUS App                            |
+| app_postgres          | -                     | DB to store the data                             | 
 
 
-## Access NetApp
+# Access FOGUS App
 ### In your browser, access the following url
 ```
 http://localhost:4200/
 ```
 
 
-## Use curl
-### Populate cells from NEF Emulator
-```
-curl --location --request GET 'http://<HOST IP>:8000/appserver/api/v1/cells/update/' | jq
-```
-### Make an one-time subscription to Monitoring Event API of NEF Emulator
-```
-curl --location --request GET http://<HOST IP>:8000/appserver/api/v1/monitoring/subscribe/1/  | jq
-```
-### Make a multiple-times subscription to Monitoring Event API of NEF Emulator
-```
-curl --location --request GET http://<HOST IP>:8000/appserver/api/v1/monitoring/subscribe/<times>/  | jq
-```
+
 
 ## Monitoring Event Callback
 ### Example of MonitoringEventReport
