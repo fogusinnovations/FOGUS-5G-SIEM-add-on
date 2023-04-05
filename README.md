@@ -1,7 +1,7 @@
 # FOGUS-5G-SIEM-add-on
 
 ## Table of contents
-* [Intorduction](#introduction)
+* [Introduction](#introduction)
 * [Technologies](#technologies)
 * [Installations](#installations)
 * [Setup](#setup)
@@ -38,26 +38,26 @@ Edit [env_to_copy.dev](./env_to_copy.dev)
 
 ### Deploy FOGUS App 
 
-# Deploy the FOGUS App
+#### Deploy the FOGUS App
 cd FOGUS-5G-SIEM-add-on
 
-# Build and deploy containers
+#### Build and deploy containers
 make (run) 
 
-# Stop and deploy again the containers
+#### Stop and deploy again the containers
 make restart
 
-# Remove and deploy again the containers
+#### Remove and deploy again the containers
 make fresh
 
-# Stop containers
+#### Stop containers
 make stop
 
-# Stop and remove containers
+#### Stop and remove containers
 make clean
 ```
 
-### Architecture
+## Architecture
 
 | Container             | Folder                | Description                                      |
 |-----------------------|-----------------------|--------------------------------------------------|
@@ -66,17 +66,14 @@ make clean
 | app_postgres          | -                     | DB to store the data                             | 
 
 
-### Access FOGUS App
-#### In your browser, access the following url
+## Access FOGUS App
+### In your browser, access the following url
 ```
 http://localhost:4200/
 ```
 
-
-
-
-### Monitoring Event Callback
-#### Example of MonitoringEventReport
+## Monitoring Event Callback
+### Example of MonitoringEventReport
 ```json
 {
   "externalId": "123456789@domain.com",
