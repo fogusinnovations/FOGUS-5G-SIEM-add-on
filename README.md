@@ -15,16 +15,16 @@ Project is created with:
 
 ## Installations
 
-# Install CAPIF
+### Install CAPIF
 
 Follow the instructions at:
 
-# Install NEF Emulator
+### Install NEF Emulator
 
 Follow the instructions at:
 https://github.com/EVOLVED-5G/NEF_emulator
 
-# Install jq (optional)
+### Install jq (optional)
 
 ```bash
 sudo apt install -y jq
@@ -32,15 +32,13 @@ sudo apt install -y jq
 
 ## Setup
 
-# Configure environmental variables 
+### Configure environmental variables 
 Edit [env_to_copy.dev](./env_to_copy.dev)
 
 
-# Deploy FOGUS App 
-```
+### Deploy FOGUS App 
 
-## Deploy the FOGUS App
-```bash
+# Deploy the FOGUS App
 cd FOGUS-5G-SIEM-add-on
 
 # Build and deploy containers
@@ -59,7 +57,7 @@ make stop
 make clean
 ```
 
-# Architecture
+### Architecture
 
 | Container             | Folder                | Description                                      |
 |-----------------------|-----------------------|--------------------------------------------------|
@@ -68,8 +66,8 @@ make clean
 | app_postgres          | -                     | DB to store the data                             | 
 
 
-# Access FOGUS App
-### In your browser, access the following url
+### Access FOGUS App
+#### In your browser, access the following url
 ```
 http://localhost:4200/
 ```
@@ -77,8 +75,8 @@ http://localhost:4200/
 
 
 
-## Monitoring Event Callback
-### Example of MonitoringEventReport
+### Monitoring Event Callback
+#### Example of MonitoringEventReport
 ```json
 {
   "externalId": "123456789@domain.com",
