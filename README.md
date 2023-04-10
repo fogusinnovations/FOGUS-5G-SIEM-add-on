@@ -1,11 +1,11 @@
 # FOGUS-5G-SIEM-add-on
-An application made by [Fogus Innovations & Services](#https://fogus.gr/) for connecting a vertical application with 5G network core.
+An application made by [Fogus Innovations & Services]((https://fogus.gr/)) for connecting a vertical application with 5G network core.
 
 ## Table of contents
 * [Introduction](#introduction)
 * [Installations](#installations)
 * [Setup](#setup)
-* [Examples of use cases](#examplesofusecases)
+* [Examples of use cases](#examples of use cases)
 * [License](#license)
 
 ## Introduction
@@ -69,9 +69,14 @@ make clean
 
 
 ### Access FOGUS App
-#### In your browser, access the following url for the UI
+#### In your browser, access the following url for the UI (frontend)
 ```
 http://localhost:4200/
+```
+
+#### In your browser, access the following url for the UI of Django (backend)
+```
+http://localhost:8000/
 ```
 
 ## Examples of use cases
@@ -89,8 +94,8 @@ http://localhost:4200/
 }
 ```
 
-## Analytics Exposure Callback
-### Example of AnalyticsEventNotification (for Abnormal Behaviour)
+### Analytics Exposure Callback
+#### Example of AnalyticsEventNotification (for Abnormal Behaviour)
 ```json
 {
   "notifId": "notif1",
@@ -141,4 +146,4 @@ http://localhost:4200/
 
 ## License
 
-This project is licensed under the [Apache] License - see the LICENSE.md file for details
+This project is licensed under the Apache License - see the LICENSE.md file for details
