@@ -1,14 +1,27 @@
 # FOGUS-5G-SIEM-add-on
 An application made by [Fogus Innovations & Services](https://fogus.gr/) for connecting a vertical application with 5G network core.
 
-## Table of contents
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Installations</a></li>
+    <li><a href="#built-with">Setup</a></li>
+    <li><a href="#built-with">Examples With</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+<!-- Body -->
+<!-- ## Table of contents
 * [Introduction](#introduction)
 * [Installations](#installations)
 * [Setup](#setup)
-* [Examples of use cases](#examples of use cases)
-* [License](#license)
+* [Examples](#examples)
+* [License](#license) -->
 
-## Introduction
+## About The Project
 
 
 ## Installations
@@ -24,6 +37,8 @@ Follow the instructions at: https://github.com/EVOLVED-5G/NEF_emulator
 ### Install EVOLVED-5G CLI & SDK
 
 Follow the instructions at: https://github.com/EVOLVED-5G/SDK-CLI
+
+### Install Docker (version
 
 ### Install jq (optional)
 
