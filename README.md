@@ -1,17 +1,15 @@
 # FOGUS-5G-SIEM-add-on
+An application made by [Fogus Innovations & Services](#https://fogus.gr/) for connecting a vertical application with 5G network core.
 
 ## Table of contents
 * [Introduction](#introduction)
-* [Technologies](#technologies)
 * [Installations](#installations)
 * [Setup](#setup)
+* [Examples of use cases](#examplesofusecases)
+* [License](#license)
 
 ## Introduction
 
-## Technologies
-Project is created with:
-* Python version: 3.8.10
-* Node.js version: 16.15.0
 
 ## Installations
 
@@ -38,12 +36,13 @@ sudo apt install -y jq
 ### Configure environmental variables 
 Edit [env_to_copy.dev](./env_to_copy.dev)
 
-
 ### Deploy FOGUS App 
-
-#### Deploy the FOGUS App
-git clone 
+```bash
+git clone https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on.git
+```
+```bash
 cd FOGUS-5G-SIEM-add-on
+```
 
 #### Build and deploy containers
 make (run) 
@@ -60,7 +59,7 @@ make stop
 #### Stop and remove containers
 make clean
 
-## Architecture
+### Architecture
 
 | Container             | Folder                | Description                                      |
 |-----------------------|-----------------------|--------------------------------------------------|
@@ -69,14 +68,15 @@ make clean
 | app_postgres          | -                     | DB to store the data                             | 
 
 
-## Access FOGUS App
-### In your browser, access the following url
+### Access FOGUS App
+#### In your browser, access the following url for the UI
 ```
 http://localhost:4200/
 ```
 
-## Monitoring Event Callback
-### Example of MonitoringEventReport
+## Examples of use cases
+### Monitoring Event Callback
+#### Example of MonitoringEventReport
 ```json
 {
   "externalId": "123456789@domain.com",
@@ -141,4 +141,4 @@ http://localhost:4200/
 
 ## License
 
-This project is licensed under the [Apache License] License - see the LICENSE.md file for details
+This project is licensed under the [Apache] License - see the LICENSE.md file for details
