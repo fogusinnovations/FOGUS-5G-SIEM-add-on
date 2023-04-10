@@ -1,5 +1,5 @@
 # FOGUS-5G-SIEM-add-on
-An application made by [Fogus Innovations & Services]((https://fogus.gr/)) for connecting a vertical application with 5G network core.
+An application made by [Fogus Innovations & Services](https://fogus.gr/) for connecting a vertical application with 5G network core.
 
 ## Table of contents
 * [Introduction](#introduction)
