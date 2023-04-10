@@ -42,6 +42,7 @@ Edit [env_to_copy.dev](./env_to_copy.dev)
 ### Deploy FOGUS App 
 
 #### Deploy the FOGUS App
+git clone 
 cd FOGUS-5G-SIEM-add-on
 
 #### Build and deploy containers
@@ -58,7 +59,6 @@ make stop
 
 #### Stop and remove containers
 make clean
-```
 
 ## Architecture
 
@@ -141,4 +141,4 @@ http://localhost:4200/
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [Apache License] License - see the LICENSE.md file for details
