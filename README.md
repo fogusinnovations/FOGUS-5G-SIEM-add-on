@@ -21,8 +21,11 @@ Follow the instructions at:
 
 ### Install NEF Emulator
 
-Follow the instructions at:
-https://github.com/EVOLVED-5G/NEF_emulator
+Follow the instructions at: https://github.com/EVOLVED-5G/NEF_emulator
+
+### Install EVOLVED-5G CLI & SDK
+
+Follow the instructions at: https://github.com/EVOLVED-5G/SDK-CLI
 
 ### Install jq (optional)
 
@@ -135,3 +138,7 @@ http://localhost:4200/
 | TOO_FREQUENT_SERVICE_ACCESS  | Too frequent Service Access  |
 | UNEXPECTED_RADIO_LINK_FAILURES  | Unexpected radio link failures  |
 | PING_PONG_ACROSS_CELLS  | Ping-ponging across neighbouring cells  |
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
