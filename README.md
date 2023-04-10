@@ -6,20 +6,14 @@ An application made by [Fogus Innovations & Services](https://fogus.gr/) for con
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#built-with">Installations</a></li>
-    <li><a href="#built-with">Setup</a></li>
-    <li><a href="#built-with">Examples With</a></li>
+    <li><a href="#installations">Installations</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#examples">Examples</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
 
 <!-- Body -->
-<!-- ## Table of contents
-* [Introduction](#introduction)
-* [Installations](#installations)
-* [Setup](#setup)
-* [Examples](#examples)
-* [License](#license) -->
 
 ## About The Project
 
@@ -38,7 +32,9 @@ Follow the instructions at: https://github.com/EVOLVED-5G/NEF_emulator
 
 Follow the instructions at: https://github.com/EVOLVED-5G/SDK-CLI
 
-### Install Docker (version
+### Install Docker
+
+### Install Make
 
 ### Install jq (optional)
 
@@ -60,19 +56,29 @@ cd FOGUS-5G-SIEM-add-on
 ```
 
 #### Build and deploy containers
+```bash
 make (run) 
+```
 
 #### Stop and deploy again the containers
+```bash
 make restart
+```
 
 #### Remove and deploy again the containers
+```bash
 make fresh
+```
 
 #### Stop containers
+```bash
 make stop
+```
 
 #### Stop and remove containers
+```bash
 make clean
+```
 
 ### Architecture
 
@@ -161,4 +167,4 @@ http://localhost:8000/
 
 ## License
 
-This project is licensed under the Apache License - see the LICENSE.md file for details
+This project is licensed under the Apache License - see the [LICENSE.md](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on/blob/main/LICENSE) file for details
