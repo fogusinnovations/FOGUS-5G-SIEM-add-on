@@ -16,9 +16,18 @@ An application made by [Fogus Innovations & Services](https://fogus.gr/) for con
 <!-- Body -->
 
 ## About The Project
+The FOGUS-5G SIEM add-on is a standalone application which is developed as a separate software component (a  containerized  Python  application exposing  a  set  of  REST  API  endpoints) communicating with the vertical application and a 5G NPN (by calling  the  exposed  NEF  APIs).
+Indicative capabilities of the FOGUS-5G SIEM add-on:
+•Receives data from 5G
+•Converts the collected data/logs/events from 5G, to readable format for the SIEM
+•Sends formatted data to SIEM over Https protocol
 
 
 ## Installations
+
+### Install [Docker](https://docs.docker.com/get-docker/)
+
+### Install [Make](https://www.gnu.org/software/make/)
 
 ### Install CAPIF
 
@@ -32,10 +41,6 @@ Follow the instructions at: https://github.com/EVOLVED-5G/NEF_emulator
 
 Follow the instructions at: https://github.com/EVOLVED-5G/SDK-CLI
 
-### Install Docker
-
-### Install Make
-
 ### Install jq (optional)
 
 ```bash
@@ -44,9 +49,6 @@ sudo apt install -y jq
 
 ## Setup
 
-### Configure environmental variables 
-Edit [env_to_copy.dev](./env_to_copy.dev)
-
 ### Deploy FOGUS App 
 ```bash
 git clone https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on.git
@@ -54,6 +56,9 @@ git clone https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on.git
 ```bash
 cd FOGUS-5G-SIEM-add-on
 ```
+
+### Configure environmental variables 
+Edit [env_to_copy.dev](./env_to_copy.dev)
 
 #### Build and deploy containers
 ```bash
