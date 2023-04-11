@@ -16,11 +16,13 @@ An application made by [Fogus Innovations & Services](https://fogus.gr/) for con
 <!-- Body -->
 
 ## About The Project
-The [FOGUS-5G SIEM](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) add-on is a standalone application which is developed as a separate software component (a  containerized  Python  application exposing  a  set  of  REST  API  endpoints) communicating with the vertical application and a 5G NPN (by calling  the  exposed  NEF  APIs).
+The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) is a standalone application which is developed as a separate software component (a  containerized  Python  application exposing  a  set  of  REST  API  endpoints) communicating with the vertical application and a 5G NPN (by calling  the  exposed  NEF  APIs).
 Indicative capabilities of the FOGUS-5G SIEM add-on:
 
 •Receives data from 5G network
+
 •Converts the collected data/logs/events from 5G network, to readable format for the SIEM
+
 •Sends formatted data to SIEM over Https protocol
 
 
