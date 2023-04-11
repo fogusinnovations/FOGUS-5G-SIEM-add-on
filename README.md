@@ -108,7 +108,7 @@ http://localhost:4200/
 http://localhost:8000/
 ```
 
-## Examples of use cases
+## Examples
 ### Monitoring Event Callback
 #### Example of MonitoringEventReport
 ```json
