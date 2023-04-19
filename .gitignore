@@ -1,0 +1,17 @@
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.idea
+.git
+src/data
+src/app_backend/nef/migrations/*
+src/app_backend/app_endpoint/migrations/*
+src/app_frontend/.angular/*
+src/app_frontend/src/assets/env.js
+.env
+example.dev
+src/app_backend/capif_onboarding/*
+!src/app_backend/capif_onboarding/.gitkeep
+*.pem
+src/app_backend/app_info.json
