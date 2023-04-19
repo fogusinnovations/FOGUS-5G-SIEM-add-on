@@ -34,7 +34,7 @@ Indicative capabilities of the FOGUS-5G SIEM add-on:
 
 ### Install CAPIF
 
-Follow the instructions at:
+Follow the instructions at: https://github.com/fogusinnovations/FOGUS-CAPIF-Services
 
 ### Install NEF Emulator
 
