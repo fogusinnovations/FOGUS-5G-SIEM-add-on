@@ -1,0 +1,41 @@
+version: '1'
+
+services:
+  dbApp:
+    image: postgres:10
+    container_name: app_postgres
+    volumes:
+      - ./data/postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+  app_backend:
+    image: app_backend_django
+    container_name: app_backend_django
+    build:
+      context: ./app_backend
+    command: ["./wait_db.sh", "dbApp:5432", "--", "sh", "docker_start_up.sh"]
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app_backend:/code
+    env_file:
+      - .env
+    depends_on:
+      - dbApp
+    extra_hosts:
+      - host.docker.internal:host-gateway
+      - capifcore:host-gateway
+  app_frontend:
+    image: app_frontend_angular
+    container_name: app_frontend_angular
+    build:
+      context: ./app_frontend
+    ports:
+      - 4200:4200
+    volumes:
+      - ./app_frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - .env
+    depends_on:
+      - app_backend
