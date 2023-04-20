@@ -1,5 +1,5 @@
 # FOGUS-5G-SIEM-add-on
-An application made by [Fogus Innovations & Services](https://fogus.gr/) for connecting a vertical application with 5G network core.
+An application developed by [Fogus Innovations & Services](https://fogus.gr/) for connecting 5G devices with a Security Information and Event Management (SIEM) system.
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -8,7 +8,6 @@ An application made by [Fogus Innovations & Services](https://fogus.gr/) for con
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#installations">Installations</a></li>
     <li><a href="#setup">Setup</a></li>
-    <li><a href="#examples">Examples</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -16,7 +15,7 @@ An application made by [Fogus Innovations & Services](https://fogus.gr/) for con
 <!-- Body -->
 
 ## About The Project
-The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) is a standalone application which is developed as a separate software component (a  containerized  Python  application exposing  a  set  of  REST  API  endpoints) communicating with the vertical application and a 5G NPN (by calling  the  exposed  NEF  APIs).
+The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) is a standalone application which is developed as a separate software component (a containerized  application exposing a set of REST API endpoints) communicating with a SIEM application and a 5G NPN (by calling the exposed NEF APIs).
 Indicative capabilities of the FOGUS-5G SIEM add-on:
 
 •Receives data from 5G network
@@ -25,6 +24,11 @@ Indicative capabilities of the FOGUS-5G SIEM add-on:
 
 •Sends formatted data to SIEM over Https protocol
 
+
+The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) has been tested with the [OSSIM](https://cybersecurity.att.com/products/ossim) SIEM system by AlienVault.
+
+![5G_SIEM_addon](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on/src/app_frontend/src/assets/5G_SIEM_addon.png)
+<br/>
 
 ## Installations
 
@@ -38,7 +42,7 @@ Follow the instructions at: https://github.com/fogusinnovations/FOGUS-CAPIF-Serv
 
 ### Install NEF Emulator
 
-Follow the instructions at: https://github.com/EVOLVED-5G/NEF_emulator
+Follow the instructions at: https://github.com/medianetlab/NEF_emulator
 
 ### Install EVOLVED-5G CLI & SDK
 
@@ -57,7 +61,7 @@ sudo apt install -y jq
 git clone https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on.git
 ```
 ```bash
-cd FOGUS-5G-SIEM-add-on
+cd FOGUS-5G-SIEM-add-on/src
 ```
 
 ### Configure environmental variables 
@@ -107,71 +111,6 @@ http://localhost:4200/
 ```
 http://localhost:8000/
 ```
-
-## Examples
-### Monitoring Event Callback
-#### Example of MonitoringEventReport
-```json
-{
-  "externalId": "123456789@domain.com",
-  "monitoringType": "LOCATION_REPORTING",
-  "locationInfo": {
-    "cellId": "string",
-    "enodeBId": "string"
-  },
-  "ipv4Addr": "string"
-}
-```
-
-### Analytics Exposure Callback
-#### Example of AnalyticsEventNotification (for Abnormal Behaviour)
-```json
-{
-  "notifId": "notif1",
-  "analyEventNotifs": [
-    {
-      "analyEvent": "ABNORMAL_BEHAVIOR",
-      "expiry": "2021-11-26T09:21:04.481Z",
-      "timeStamp": "2021-11-26T09:21:04.481Z",
-      "abnormalInfos": [
-        {
-          "gpsis": [
-            "string"
-          ],
-          "appId": "string",
-          "excep": {
-            "excepId": "SUSPICION_OF_DDOS_ATTACK",
-            "excepLevel": 0,
-            "excepTrend": "UP"
-          },
-          "ratio": 100,
-          "confidence": 0,
-          "addtMeasInfo": {
-            "ddosAttack": {
-              "ipv4Addrs": [
-                "198.51.100.1"
-              ]
-            }
-          }
-        }
-      ]
-    }
-  ]
-}
-```
-
-### Exceptions ('excep' field) for Abnormal Behaviour
-| excepId  | Description |
-| ------------- | ------------- |
-| UNEXPECTED_UE_LOCATION  | Unexpected UE location  |
-| UNEXPECTED_LONG_LIVE_FLOW  | Unexpected long-live rate flows  |
-| UNEXPECTED_LARGE_RATE_FLOW | Unexpected large rate flows  |
-| UNEXPECTED_WAKEUP  | Unexpected wakeup  |
-| SUSPICION_OF_DDOS_ATTACK  | Suspicion of DDoS attack  |
-| WRONG_DESTINATION_ADDRESS  | Wrong destination address  |
-| TOO_FREQUENT_SERVICE_ACCESS  | Too frequent Service Access  |
-| UNEXPECTED_RADIO_LINK_FAILURES  | Unexpected radio link failures  |
-| PING_PONG_ACROSS_CELLS  | Ping-ponging across neighbouring cells  |
 
 ## License
 
