@@ -1,6 +1,6 @@
 export VERSION ?= 1.0
 DOCKERFILE = Dockerfile
-DOCKER_COMPOSE = docker compose -p fogusnetapp
+DOCKER_COMPOSE = docker compose -p fogusapp
 
 default: run
 clean: clean-dev
