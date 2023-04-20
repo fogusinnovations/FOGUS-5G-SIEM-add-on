@@ -27,7 +27,7 @@ Indicative capabilities of the FOGUS-5G SIEM add-on:
 
 The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) has been tested with the [OSSIM](https://cybersecurity.att.com/products/ossim) SIEM system by AlienVault.
 
-![5G_SIEM_addon](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on/src/app_frontend/src/assets/5G_SIEM_addon.png)
+<img src="https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on/blob/main/src/app_frontend/src/assets/5G_SIEM_addon.png" width="100%" height="auto" alt="5G_SIEM_addon"/>
 <br/>
 
 ## Installations
