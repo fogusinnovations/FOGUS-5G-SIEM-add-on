@@ -18,14 +18,14 @@ An application developed by [Fogus Innovations & Services](https://fogus.gr/) fo
 The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) is a standalone application which is developed as a separate software component (a containerized  application exposing a set of REST API endpoints) communicating with a SIEM application and a 5G NPN (by calling the exposed NEF APIs).
 Indicative capabilities of the FOGUS-5G SIEM add-on:
 
-•Receives data from 5G network
+• Receives data from 5G network
 
-•Converts the collected data/logs/events from 5G network, to readable format for the SIEM
+• Converts the collected data/logs/events from 5G network, to readable format for the SIEM
 
-•Sends formatted data to SIEM over Https protocol
+• Sends formatted data to SIEM over Https protocol
 
 
-The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) has been tested with the [OSSIM](https://cybersecurity.att.com/products/ossim) SIEM system by AlienVault.
+The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on) has been tested with the [AlienVault OSSIM](https://cybersecurity.att.com/products/ossim) SIEM system.
 
 <img src="https://github.com/fogusinnovations/FOGUS-5G-SIEM-add-on/blob/main/src/app_frontend/src/assets/5G_SIEM_addon.png" width="100%" height="auto" alt="5G_SIEM_addon"/>
 <br/>
