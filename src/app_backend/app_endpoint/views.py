@@ -289,14 +289,15 @@ class CreateMonitoringSubscriptionView(APIView):
             monitoring_response = monitor_subscription(int(times), host, token.access_token, os.environ['PATH_TO_CERTS'],
                                             os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
         elif MonitoringType_selected == "UE_REACHABILITY":
-            # monitoring_type = ConnectionMonitor.MonitoringType.INFORM_WHEN_CONNECTED 
-            # monitoring_response = connection_monitoring(int(times),monitoring_type, host, token.access_token, os.environ['PATH_TO_CERTS'],os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
-            monitoring_response = connection_monitoring_ue_reachability(host, token.access_token, os.environ['PATH_TO_CERTS'],
-                                            os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
+            monitoring_type = ConnectionMonitor.MonitoringType.INFORM_WHEN_CONNECTED 
+            monitoring_response = connection_monitoring(int(times),monitoring_type, host, token.access_token, os.environ['PATH_TO_CERTS'],os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
+            # monitoring_response = connection_monitoring_ue_reachability(host, token.access_token, os.environ['PATH_TO_CERTS'],
+            #                                 os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
         else:
-            # monitoring_type = ConnectionMonitor.MonitoringType.INFORM_WHEN_NOT_CONNECTED 
-            monitoring_response = connection_monitoring_loss_of_conn(host, token.access_token, os.environ['PATH_TO_CERTS'],
-                                            os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
+            monitoring_type = ConnectionMonitor.MonitoringType.INFORM_WHEN_NOT_CONNECTED 
+            monitoring_response = connection_monitoring(int(times),monitoring_type, host, token.access_token, os.environ['PATH_TO_CERTS'],os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
+            # monitoring_response = connection_monitoring_loss_of_conn(host, token.access_token, os.environ['PATH_TO_CERTS'],
+            #                                 os.environ['CAPIF_HOSTNAME'], os.environ['CAPIF_PORT_HTTPS'], callback_host)
         if int(times) == 1:
             cellId = monitoring_response['location_info']['cell_id']
             if cellId is None:
