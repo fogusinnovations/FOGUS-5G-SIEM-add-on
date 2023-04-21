@@ -16,7 +16,7 @@ stop-dev:
 
 clean-dev: stop-dev
 	@ echo "May need to give password to remove database and migrations"
-	@ [ -d ./src/data ] && sudo rm -R ./src/data/ || :
+	@ [ -d ./data ] && sudo rm -R ./data/ || :
 	@ [ -f .env ] && sudo rm .env || :
 	@ [ -d app_backend/app_endpoint/migrations ] && sudo rm -R app_backend/app_endpoint/migrations/* || :
 	@ [ -d app_backend/capif_onboarding ] && sudo rm app_backend/capif_onboarding/* || :
