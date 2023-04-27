@@ -243,7 +243,7 @@ class CellViewSet(mixins.ListModelMixin,
 
 class CreateMonitoringSubscriptionView(APIView):
     ### Authenticate App with the vertical App ###
-    def authentication_app():
+    def authentication_app(self):
         vapp_host = get_vapp_server_auth()
         app_address = os.environ['CALLBACK_ADDRESS']
         app_name = "Fogus 5G SIEM add-on"
