@@ -15,7 +15,7 @@ stop-dev:
 	@ $(DOCKER_COMPOSE) down --rmi local --remove-orphans || true
 
 clean-dev: stop-dev
-	@ echo "May need to give password to remove database and migrations"
+	@ echo "\e[31mMay need to give password to remove database and migrations\e[0m"
 	@ [ -d ./data ] && sudo rm -R ./data/ || :
 	@ [ -f .env ] && sudo rm .env || :
 	@ [ -d app_backend/app_endpoint/migrations ] && sudo rm -R app_backend/app_endpoint/migrations/* || :
