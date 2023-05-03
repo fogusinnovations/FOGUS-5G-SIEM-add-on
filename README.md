@@ -36,6 +36,8 @@ The [FOGUS-5G SIEM add-on](https://github.com/fogusinnovations/FOGUS-5G-SIEM-add
 
 ### Install [Make](https://www.gnu.org/software/make/)
 
+### Install [Docker Compose](https://docs.docker.com/compose/)
+
 ### Install CAPIF
 
 Follow the instructions at: https://github.com/fogusinnovations/FOGUS-CAPIF-Services
