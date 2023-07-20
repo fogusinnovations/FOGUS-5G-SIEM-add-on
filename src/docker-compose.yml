@@ -13,7 +13,7 @@ services:
     container_name: app_backend_django
     build:
       context: ./app_backend
-    command: ["./wait_db.sh", "dbApp:5432", "--", "sh", "docker_start_up.sh"]
+    command: ["./wait_db.sh", "$POSTGRES_HOST:$POSTGRES_PORT", "--", "sh", "docker_start_up.sh"]
     ports:
       - 8000:8000
     volumes:
